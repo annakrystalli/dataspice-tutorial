@@ -25,3 +25,15 @@ The data are a trimmed subset of data downladed from th NEON [data portal](http:
 -   locations within NEON Domain area **`D01: Northeast`**
 
 Filter returned data from **2 sites** from **`2015-6`** to **`2015-11`**.
+
+### vst\_perplotperyear.csv
+
+Plot level data
+
+![](README_files/figure-markdown_github/unnamed-chunk-2-1.png)
+
+### vst\_mappingandtagging.csv
+
+Individual level data
+
+![](README_files/figure-markdown_github/unnamed-chunk-3-1.png)
