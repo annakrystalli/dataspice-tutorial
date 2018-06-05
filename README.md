@@ -55,6 +55,8 @@ The data are a trimmed subset of data downladed from the [**NEON data portal**](
 
 Filter returned data from **2 sites** from **`2015-6`** to **`2015-11`**.
 
+<br>
+
 ### vst\_perplotperyear.csv
 
 Plot level data
@@ -67,6 +69,8 @@ Plot level data
 | BART\_034.basePlot.vst | 2015-07-22 | BART   | BART\_034 | tower    | mixedForest     |         44.06428|         -71.28561| WGS84         | vst\_BART\_2015 | NA           | NA            | NA            |                    800|                           400|                    800| bWvVSKjgptV89BwHA3h10JNaeV+PHmDU |
 | BART\_041.basePlot.vst | 2015-07-22 | BART   | BART\_041 | tower    | deciduousForest |         44.06534|         -71.28561| WGS84         | vst\_BART\_2015 | NA           | NA            | NA            |                    800|                           400|                    800| MRgCvwP2WueoGZahvpQXNZ+be1CYdCGm |
 | BART\_033.basePlot.vst | 2015-07-22 | BART   | BART\_033 | tower    | deciduousForest |         44.06320|         -71.28367| WGS84         | vst\_BART\_2015 | NA           | NA            | NA            |                    800|                           100|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
+
+<br>
 
 ### vst\_mappingandtagging.csv
 
@@ -82,6 +86,8 @@ Individual level data
 | BART\_039.basePlot.vst | 2015-08-04 | BART   | BART\_039 | vst\_BART\_2015 | NEON.PLA.D01.BART.02904A | TSCA    | Tsuga canadensis (L.) Carrière | 0uwWHUCkGoRVT9RpJxngFjI8cZrsFWgn |
 
 ------------------------------------------------------------------------
+
+<br>
 
 > ##### Citation
 >
