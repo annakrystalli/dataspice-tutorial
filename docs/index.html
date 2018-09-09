@@ -1,0 +1,577 @@
+<html>
+  <head>
+    <title>Compiled annual statewide Alaskan salmon escapement counts, 1921-2017</title>
+    <script type="application/ld+json">
+      {
+  "@context": "http://schema.org",
+  "type": "Dataset",
+  "name": "NEON Woody plant vegetation structure",
+  "creator": [
+    {
+      "type": "Person",
+      "id": "0000-0002-2378-4915",
+      "worksFor": "University of Sheffield",
+      "givenName": "Anna",
+      "familyName": "Krystalli",
+      "email": "a.krystalli@sheffield.ac.uk"
+    }
+  ],
+  "description": "This data product contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:\n\nenabling biomass and productivity estimation,\nestimation of shrub volume and biomass\ncalibration / validation of multiple NEON airborne remote-sensing data products.\nIn general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.\n\nStructure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.",
+  "datePublished": "2018-09-08",
+  "keywords": null,
+  "funder": null,
+  "temporalCoverage": "2015-05-22/2015-11-18",
+  "license": "CC-BY",
+  "spatialCoverage": {
+    "type": "Place",
+    "name": null,
+    "geo": {
+      "type": "GeoShape",
+      "box": "44.068 -71.2815 42.3923 -72.2657"
+    }
+  },
+  "variableMeasured": [
+    {
+      "type": "PropertyValue",
+      "value": "date",
+      "unitText": null,
+      "description": "Date or date and time of measurement, observation, or collection event"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "siteID",
+      "unitText": null,
+      "description": "NEON site code"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "plotID",
+      "unitText": null,
+      "description": "Plot identifier (NEON site code_XXX)"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "individualID",
+      "unitText": null,
+      "description": "Domain-level unique identifier for an individual: NEON.MOD.D##.######"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "taxonID",
+      "unitText": null,
+      "description": "Species code, based on one or more sources"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "scientificName",
+      "unitText": null,
+      "description": "Scientific name, associated with the taxonID. This is the name of the lowest level taxonomic rank that can be determined"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "recordedBy",
+      "unitText": null,
+      "description": "An identifier for the technician who recorded the data"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "date",
+      "unitText": null,
+      "description": "Date or date and time of measurement, observation, or collection event"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "siteID",
+      "unitText": null,
+      "description": "NEON site code"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "plotID",
+      "unitText": null,
+      "description": "Plot identifier (NEON site code_XXX)"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "plotType",
+      "unitText": null,
+      "description": "NEON plot type in which sampling occurred: tower, distributed or gradient"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "nlcdClass",
+      "unitText": null,
+      "description": "National Land Cover Database Vegetation Type Name"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "decimalLatitude",
+      "unitText": "decimalDegree",
+      "description": "The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "decimalLongitude",
+      "unitText": "decimalDegree",
+      "description": "The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "treesPresent",
+      "unitText": null,
+      "description": "Indicator of whether the plot contains trees of any size"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "shrubsPresent",
+      "unitText": null,
+      "description": "Indicator of whether the plot contains shrubs, saplings, or small trees"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "lianasPresent",
+      "unitText": null,
+      "description": "Indicator of whether the plot contains lianas"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "totalSampledAreaTrees",
+      "unitText": "squareMeter",
+      "description": "Total plot area sampled for single and multi-bole trees"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "totalSampledAreaShrubSapling",
+      "unitText": "squareMeter",
+      "description": "Total plot area sampled for saplings, shrubs, and small trees"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "totalSampledAreaLiana",
+      "unitText": "squareMeter",
+      "description": "Total plot area sampled for liana"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "recordedBy",
+      "unitText": null,
+      "description": "An identifier for the technician who recorded the data"
+    }
+  ],
+  "distribution": [
+    {
+      "type": "DataDownload",
+      "name": "vst_mappingandtagging",
+      "contentUrl": "https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv",
+      "fileFormat": "csv"
+    },
+    {
+      "type": "DataDownload",
+      "name": "vst_perplotperyear",
+      "contentUrl": "https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv",
+      "fileFormat": "csv"
+    }
+  ]
+}
+
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+   crossorigin=""></script>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: sans-serif;
+        margin: 0 auto;
+        width: 800px;
+      }
+
+      #map {
+        width: 800px;
+        height: 300px;
+      }
+
+      #attributes-wrapper {
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      #jsonld-wrapper {
+        height: 300px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>NEON Woody plant vegetation structure</h1>
+    <p>This data product contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:
+
+enabling biomass and productivity estimation,
+estimation of shrub volume and biomass
+calibration / validation of multiple NEON airborne remote-sensing data products.
+In general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.
+
+Structure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.</p>
+
+    <h2>Bibliographic</h2>
+
+    <ul>
+      <li>datePublished: 2018-09-08</li>
+      <li>keywords
+      <ul>
+      </ul>
+      </li>
+      <li>funder: </li>
+      <li>license: CC-BY</li>
+    </ul>
+
+    <h2>Coverage</h2>
+
+    <h3>Temporal</h3>
+    <ul>
+      <li>beginDate: 2015-05-22</li>
+      <li>endDate: 2015-11-18</li>
+    </ul>
+
+    <h3>Spatial</h3>
+    <pre><code></code></pre>
+    <div id="map"></div>
+
+    <h2>Attributes</h2>
+
+    <div id="attributes-wrapper">
+      <table id="attributes">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Description</th>
+            <th>Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>date</td>
+            <td>Date or date and time of measurement, observation, or collection event</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>siteID</td>
+            <td>NEON site code</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>plotID</td>
+            <td>Plot identifier (NEON site code_XXX)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>individualID</td>
+            <td>Domain-level unique identifier for an individual: NEON.MOD.D##.######</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>taxonID</td>
+            <td>Species code, based on one or more sources</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>scientificName</td>
+            <td>Scientific name, associated with the taxonID. This is the name of the lowest level taxonomic rank that can be determined</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>recordedBy</td>
+            <td>An identifier for the technician who recorded the data</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>date</td>
+            <td>Date or date and time of measurement, observation, or collection event</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>siteID</td>
+            <td>NEON site code</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>plotID</td>
+            <td>Plot identifier (NEON site code_XXX)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>plotType</td>
+            <td>NEON plot type in which sampling occurred: tower, distributed or gradient</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>nlcdClass</td>
+            <td>National Land Cover Database Vegetation Type Name</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>decimalLatitude</td>
+            <td>The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>decimalLongitude</td>
+            <td>The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>treesPresent</td>
+            <td>Indicator of whether the plot contains trees of any size</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>shrubsPresent</td>
+            <td>Indicator of whether the plot contains shrubs, saplings, or small trees</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>lianasPresent</td>
+            <td>Indicator of whether the plot contains lianas</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>totalSampledAreaTrees</td>
+            <td>Total plot area sampled for single and multi-bole trees</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>totalSampledAreaShrubSapling</td>
+            <td>Total plot area sampled for saplings, shrubs, and small trees</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>totalSampledAreaLiana</td>
+            <td>Total plot area sampled for liana</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NEON Woody plant vegetation structure</td>
+            <td>recordedBy</td>
+            <td>An identifier for the technician who recorded the data</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Debug</h2>
+    <div id="jsonld-wrapper">
+      <pre id="jsonld">
+        <code>{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;type&quot;: &quot;Dataset&quot;,
+  &quot;name&quot;: &quot;NEON Woody plant vegetation structure&quot;,
+  &quot;creator&quot;: [
+    {
+      &quot;type&quot;: &quot;Person&quot;,
+      &quot;id&quot;: &quot;0000-0002-2378-4915&quot;,
+      &quot;worksFor&quot;: &quot;University of Sheffield&quot;,
+      &quot;givenName&quot;: &quot;Anna&quot;,
+      &quot;familyName&quot;: &quot;Krystalli&quot;,
+      &quot;email&quot;: &quot;a.krystalli@sheffield.ac.uk&quot;
+    }
+  ],
+  &quot;description&quot;: &quot;This data product contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:\n\nenabling biomass and productivity estimation,\nestimation of shrub volume and biomass\ncalibration / validation of multiple NEON airborne remote-sensing data products.\nIn general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.\n\nStructure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.&quot;,
+  &quot;datePublished&quot;: &quot;2018-09-08&quot;,
+  &quot;keywords&quot;: null,
+  &quot;funder&quot;: null,
+  &quot;temporalCoverage&quot;: &quot;2015-05-22/2015-11-18&quot;,
+  &quot;license&quot;: &quot;CC-BY&quot;,
+  &quot;spatialCoverage&quot;: {
+    &quot;type&quot;: &quot;Place&quot;,
+    &quot;name&quot;: null,
+    &quot;geo&quot;: {
+      &quot;type&quot;: &quot;GeoShape&quot;,
+      &quot;box&quot;: &quot;44.068 -71.2815 42.3923 -72.2657&quot;
+    }
+  },
+  &quot;variableMeasured&quot;: [
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;date&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Date or date and time of measurement, observation, or collection event&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;siteID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;NEON site code&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;plotID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Plot identifier (NEON site code_XXX)&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;individualID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Domain-level unique identifier for an individual: NEON.MOD.D##.######&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;taxonID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Species code, based on one or more sources&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;scientificName&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Scientific name, associated with the taxonID. This is the name of the lowest level taxonomic rank that can be determined&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;recordedBy&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;An identifier for the technician who recorded the data&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;date&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Date or date and time of measurement, observation, or collection event&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;siteID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;NEON site code&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;plotID&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Plot identifier (NEON site code_XXX)&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;plotType&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;NEON plot type in which sampling occurred: tower, distributed or gradient&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;nlcdClass&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;National Land Cover Database Vegetation Type Name&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;decimalLatitude&quot;,
+      &quot;unitText&quot;: &quot;decimalDegree&quot;,
+      &quot;description&quot;: &quot;The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;decimalLongitude&quot;,
+      &quot;unitText&quot;: &quot;decimalDegree&quot;,
+      &quot;description&quot;: &quot;The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;treesPresent&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Indicator of whether the plot contains trees of any size&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;shrubsPresent&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Indicator of whether the plot contains shrubs, saplings, or small trees&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;lianasPresent&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;Indicator of whether the plot contains lianas&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;totalSampledAreaTrees&quot;,
+      &quot;unitText&quot;: &quot;squareMeter&quot;,
+      &quot;description&quot;: &quot;Total plot area sampled for single and multi-bole trees&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;totalSampledAreaShrubSapling&quot;,
+      &quot;unitText&quot;: &quot;squareMeter&quot;,
+      &quot;description&quot;: &quot;Total plot area sampled for saplings, shrubs, and small trees&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;totalSampledAreaLiana&quot;,
+      &quot;unitText&quot;: &quot;squareMeter&quot;,
+      &quot;description&quot;: &quot;Total plot area sampled for liana&quot;
+    },
+    {
+      &quot;type&quot;: &quot;PropertyValue&quot;,
+      &quot;value&quot;: &quot;recordedBy&quot;,
+      &quot;unitText&quot;: null,
+      &quot;description&quot;: &quot;An identifier for the technician who recorded the data&quot;
+    }
+  ],
+  &quot;distribution&quot;: [
+    {
+      &quot;type&quot;: &quot;DataDownload&quot;,
+      &quot;name&quot;: &quot;vst_mappingandtagging&quot;,
+      &quot;contentUrl&quot;: &quot;https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv&quot;,
+      &quot;fileFormat&quot;: &quot;csv&quot;
+    },
+    {
+      &quot;type&quot;: &quot;DataDownload&quot;,
+      &quot;name&quot;: &quot;vst_perplotperyear&quot;,
+      &quot;contentUrl&quot;: &quot;https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv&quot;,
+      &quot;fileFormat&quot;: &quot;csv&quot;
+    }
+  ]
+}
+</code>
+      </pre>
+    </div>
+
+    <script>
+      var mymap = L.map('map').setView([43.23015, -71.7736], 1);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiYnJ5Y2VtIiwiYSI6ImxXeXloYWMifQ.-WnjEqej0kbv101nt6b_KQ'
+      }).addTo(mymap);
+
+      var polygon = L.polygon([[ 44.068, -71.2815], [ 42.3923, -71.2815], [ 42.3923, -72.2657], [ 44.068, -72.2657]]).addTo(mymap);
+    </script>
+  </body>
+</html>
