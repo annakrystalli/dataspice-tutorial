@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practical Data Management w/ dataspice</title>
+    <meta charset="utf-8">
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/little_ak.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/little_ak-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Practical Data Management w/ dataspice
+## ✨ spicing up your data with <br/>tasty metadata ✨
+
+---
+
+
+
+# 👋 Hello and welcome
+
+### me: Dr Anna Krystalli
+
+- **Research Software Engineer**, _University of Sheffield_
+    + twitter **@annakrystalli**
+    + github **@annakrystalli**
+    + email **a.krystalli[at]sheffield.ac.uk**
+
+--
+
+- **Backround**
+    + PhD in Marine Macroecology (data parasite 👿)
+--
+    + [rOpenSci](http://onboarding.ropensci.org/) Editor
+--
+    + ACCE Doctoral Partnership **Research Data Management** course instructor
+
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+---
+class: inverse, middle, center
+
+# Background
+
+---
+
+# [ACCE DTP RDM](https://acce.shef.ac.uk/event/acce-data-management-workshop/) course
+##### May 1 - 2, 2018
+
+&lt;br&gt;
+
+Includes a **section on Metadata** ✨
+
+--
+- **Defining** Metadata &amp; **explaining importance**: ✅
+
+--
+
+- Advising on domain specific **Controlled Vocabularies** &amp; **structure** ❌
+
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+***
+
+_course materials can be found [here](http://annakrystalli.me/ACCE/)_
+
+---
+
+# [rOpenSci Unconf 18](http://unconf18.ropensci.org/)
+##### May 21 - 22, 2018. Seattle
+
+![](assets/seattle.svg)
+
+
+---
+
+---    
+
+# rOpenSci Unconf mission
+
+
+&gt; bringing together scientists, developers, and open data enthusiasts from academia, industry, government, and non-profits to get together for a few days and hack on various projects.
+
+&lt;br&gt;
+
+#### Ideas for projects submitted through GitHub [**issues**](https://github.com/ropensci/unconf18/issues) in the [**runconf18** repo](https://github.com/ropensci/unconf18)
+
+---
+
+## issue [#72](https://github.com/ropensci/unconf18/issues/72) 🙋
+
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-1-1.png" width="1580" /&gt;
+
+---
+
+
+# Metadata team!
+------------
+
+Luckily, a **whole bunch of other awesome folks** already thinking about these topics and interested in working on them! 🤩
+
+(in alphabetical order):
+
+-   [Carl Boettiger](https://github.com/cboettig)
+-   [Scott Chamberlain](https://github.com/sckott)
+-   [Auriel Fournier](https://github.com/aurielfournier)
+-   [Kelly Hondula](https://github.com/khondula)
+-   [Anna Krystalli](https://github.com/annakrystalli)
+-   [Bryce Mecum](https://github.com/amoeba)
+-   [Maëlle Salmon](https://github.com/maelle)
+-   [Kate Webbink](https://github.com/magpiedin)
+-   [Kara Woo](https://github.com/karawoo)
+
+
+---
+
+
+# [rOpenSciLabs](https://github.com/ropenscilabs) pkg [**`dataspice`**](https://github.com/ropenscilabs/dataspice) 
+
+&gt; Package [**`dataspice`**](https://github.com/ropenscilabs/dataspice) makes it easier for researchers to **create basic, lightweight and concise metadata files for their datasets**. 
+
+&lt;br&gt;
+
+- Metadata **collected in `csv` files**
+
+--
+
+- Metadata fields are **based on [schema.org](http://schema.org/Dataset)**
+    + underlies Google [Datasets](https://developers.google.com/search/docs/data-types/dataset) metadata specification
+
+--
+
+- Helper functions and shinyapps to **extract and edit metadata files**.
+
+--
+
+- Ability to produce:
+    + **structured (.json) metadata file**.
+    + a helpful dataset **README webpage**.
+ 
+    
+&lt;br&gt; 
+
+---
+[![](assets/google_search_article.png)](https://www.theverge.com/2018/9/5/17822562/google-dataset-search-service-scholar-scientific-journal-open-data-access)
+
+&lt;br&gt;
+
+#### &lt;https://toolbox.google.com/datasetsearch&gt;
+
+![](assets/google_search.png)
+
+---
+class: inverse, middle, center
+
+# `dataspice` tutorial
+---
+
+# `dataspice` tutorial
+
+&lt;br&gt;
+
+The goal of dataspice-tutorial is a **practical exercise in creating metadata** for an **example field collected data product** using package `dataspice`. 
+
+- Understand basic metadata and why it is important
+
+--
+
+- Understand where and how to store them
+
+--
+
+- Understand how they can feed into more complex metadata objects.
+
+---
+
+# Example dataset
+
+### Data source : 
+
+#### [National Ecological Observatory Network](https://www.neonscience.org/) (NEON) data portal 
+
+
+
+### Dataset selected:
+
+#### *Woody plant vegetation structure*
+
+ This data product contains the quality-controlled, native sampling resolution data from **in-situ measurements of live and standing dead woody individuals and shrub groups**, from all **terrestrial NEON sites** with qualifying woody vegetation. 
+
+--
+ 
+- **Structure and mapping data** are reported **per individual per plot**
+
+- **Sampling metadata**, such as per growth form sampling area, are reported **per plot**. 
+
+---
+
+# `dataspice` workshop data
+
+![](http://data.neonscience.org/neon-data-theme/images/logo--blue-neon-data.png)
+
+The data are a **trimmed subset** of data downladed from the [**NEON data portal**](http://data.neonscience.org/browse-data) after filtering for:
+
+- time periods between **`2015-06` - `2016-06`**
+
+- locations within NEON Domain area **`D01: Northeast`**
+
+Filter returned data from **2 sites** from **`2015-6`** to **`2015-11`**.
+
+&lt;br&gt;
+
+***
+
+##### Citation:
+_National Ecological Observatory Network. 2018. Data Products: DP1.10098.001.  Provisional data downloaded from http://data.neonscience.org on 2018-05-04. Battelle, Boulder, CO, USA_
+
+
+
+---
+
+## vst_perplotperyear.csv
+
+Plot level data
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; siteID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; plotID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; plotType &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; nlcdClass &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; decimalLatitude &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; decimalLongitude &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; treesPresent &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; shrubsPresent &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; lianasPresent &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; totalSampledAreaTrees &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; totalSampledAreaShrubSapling &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; totalSampledAreaLiana &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; recordedBy &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 06/06/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_042 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; deciduousForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06019 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.28805 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; wmtulGhdefWiPr5g1VRF0YnRBawgSBx1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/16/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_047 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; deciduousForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06496 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.29087 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/21/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_047 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; deciduousForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06496 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.29087 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/22/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_034 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; mixedForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06428 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.28561 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bWvVSKjgptV89BwHA3h10JNaeV+PHmDU &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/22/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_041 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; deciduousForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06534 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.28561 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; MRgCvwP2WueoGZahvpQXNZ+be1CYdCGm &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/22/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_033 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tower &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; deciduousForest &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.06320 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -71.28367 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+## vst_mappingandtagging.csv
+
+Individual level data
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; siteID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; plotID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; individualID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; taxonID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; scientificName &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; recordedBy &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 08/04/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_051 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.04140 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TSCA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tsuga canadensis (L.) Carrière &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 08/04/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_051 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.03804 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TSCA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tsuga canadensis (L.) Carrière &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 07/22/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_034 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.02967 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FAGR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Fagus grandifolia Ehrh. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 08/26/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_036 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.05106 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FAGR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Fagus grandifolia Ehrh. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 08/04/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_051 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.04080 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PICEA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Picea sp. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 08/04/15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BART_039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NEON.PLA.D01.BART.02904A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TSCA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tsuga canadensis (L.) Carrière &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0uwWHUCkGoRVT9RpJxngFjI8cZrsFWgn &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+---
+class: inverse, middle, center
+
+# Practical
+
+--
+
+### time for some live coding 😱
+
+---
+
+
+
+---
+
+# Parting words
+
+- #### Any metadata documentation is better than none
+
+--
+
+- Are you into metadata? Become a contributor!
+
+--
+
+- If you use the [`xaringan`](https://slides.yihui.name/xaringan/#1) pkg, don't forget to try the `yolo=true` option, of `xaringan::moon_reader`.
+
+--
+
+## 👋
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
