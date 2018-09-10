@@ -1,0 +1,225 @@
+---
+title: "Tutorial"
+output:
+  html_document:
+    df_print: paged
+    theme: cerulean
+editor_options:
+  chunk_output_type: inline
+---
+
+***
+
+
+
+## workshop project
+
+Let's create a new Rstudio project in which to work with:
+
+### File > New Project > New Directory > New Project > "Practical Data Management"
+
+In our new project, let's create a `data/` folder in which to store the data.
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+dir.create("data")
+```
+
+Let's also open a new R script in which to work:
+
+### File > New File > R Script 
+
+Save it in the project root, eg as `metadata_dev.R`
+
+
+---
+
+## Packages
+
+Let's install and load all the packages we'll need for the workshop:
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+install.packages("here")
+install.packages("devtools")
+devtools::install_github("ropenscilabs/dataspice")
+```
+
+
+```{r, message=FALSE}
+library(tidyverse)
+library(dataspice)
+```
+
+<br>
+
+***
+
+## Data
+
+For more information on the data source check the tutorial [README](https://github.com/annakrystalli/dataspice-tutorial)
+
+### Get data
+
+The `readr::read_csv()` allows use to download **raw csv data** from a URL.
+
+- URL for `vst_mappingandtagging.csv` at [bit.ly/mapping_csv](http://bit.ly/mapping_csv)
+
+- URL for `vst_perplotperyear.csv` at [bit.ly/perplot_csv](http://bit.ly/perplot_csv)
+
+```{r, message=FALSE}
+vst_mappingandtagging <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv")
+
+vst_perplotperyear <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv")
+```
+
+### Inspect data
+
+You can inspect any object in your environment in Rstudio using function `View()`
+
+```{r, eval = F}
+vst_mappingandtagging %>% View()
+```
+
+
+```{r, echo=FALSE}
+DT::datatable(vst_mappingandtagging)
+```
+
+
+```{r, eval=FALSE}
+vst_perplotperyear %>% View()
+```
+
+```{r, echo=FALSE}
+DT::datatable(vst_perplotperyear)
+```
+
+### Save data
+
+```{r, eval=FALSE}
+write_csv(vst_mappingandtagging, here::here("data", "vst_mappingandtagging.csv"))
+write_csv(vst_perplotperyear, here::here("data", "vst_perplotperyear.csv"))
+```
+
+
+## Create metadata files
+
+```{r, eval=FALSE}
+create_spice()
+```
+
+This creates by default a `metadata` folder in your project's `data` folder (although you can specify a different directory) containing 4 files in which to record your metadata.
+
+
+![](assets/dataspice_files.png)
+
+<br>
+
+
+- **access.csv**: record details about where your data can be accessed
+- **attributes.csv**: record details about the columns in your data
+- **biblio.csv**: record dataset level metadata like title, description, licence and spatial and temoral coverage.
+- **creators.csv**: record creator details
+
+## Record metadata
+
+### creators
+
+Let's start with a quick and easy one, the creators. We can open and edit the file using in an interactive shiny app using `edit_creators`
+
+```{r, eval=FALSE}
+edit_creators()
+```
+
+![](assets/edit_creators.png)
+
+
+Remember to click on **Save** when you're done editing.
+
+### access
+
+Before manually completing any details we can use `dataspice`'s  dedicated function `prep_access()` to extract information required for the `access.csv`
+
+```{r, eval=FALSE}
+prep_access()
+```
+
+Again, we can use function `edit_access()` to complete the final details required, namely **the URL at which each dataset can be downloaded from**. Use the URL from we donloaded each data file in the first place (hint `r emo::ji("point_up")`)
+
+We can also edit details such as the `name` field to something more informative if required.
+
+Remember to click on **Save** when you're done editing.
+
+```{r, eval=FALSE}
+edit_access()
+```
+
+![](assets/edit_access.png)
+
+
+### biblio
+
+
+Before we start filling this table in, we can use some base R to extract some of the information we require. In particular we can **use function `range()` to extract the temporal and spatial extents of our data.**
+
+
+#### get date range
+
+```{r}
+range(vst_perplotperyear$date, vst_mappingandtagging$date) 
+```
+
+#### get geographical extent
+
+##### South/North boundaries
+
+```{r}
+range(vst_perplotperyear$decimalLatitude)
+```
+
+##### West/East boundaries
+
+```{r}
+range(vst_perplotperyear$decimalLongitude)
+```
+
+
+
+```{r, eval=FALSE}
+edit_biblio()
+```
+
+### attributes
+
+```{r}
+data_files <- list.files(here::here("data"),
+                         pattern = ".csv",
+                        full.names = TRUE)
+
+data_files
+```
+
+```{r, eval=FALSE}
+data_files %>% purrr::map(~prep_attributes(.x))
+```
+
+```{r, eval=FALSE}
+edit_attributes()
+```
+
+![](assets/prepped_attr.png)
+
+# create metadata json file
+
+```{r}
+write_spice()
+```
+
+# build README site
+
+```{r}
+build_site()
+```
+
+
+
