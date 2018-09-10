@@ -8,3 +8,4 @@ data/metadata/
 metadata-*
 assets/metadata.png
 assets/missing-unicorn.jpg
+.Rbuild*
