@@ -23,6 +23,12 @@ The goal of dataspice-tutorial is a practical exercise in creating metadata for 
 - Understand where and how to store them
 - Understand how they can feed into more complex metadata objects.
 
+
+<br>
+
+- ### [Tutorial](http://annakrystalli.me/dataspice-tutorial/)
+- ### [Introductory slides](http://annakrystalli.me/dataspice-tutorial/slides.html)
+
 ***
 
 <br>
