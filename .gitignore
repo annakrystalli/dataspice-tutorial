@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+raw-data/
+data/metadata/
+*.DS_Store
+metadata-*
+assets/metadata.png
+assets/missing-unicorn.jpg
