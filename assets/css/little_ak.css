@@ -1,0 +1,40 @@
+html {
+  font-size: 3.5vmin; }
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 18px; } }
+@media (max-width: 768px) {
+  html {
+    font-size: 18px; } }
+@media (max-width: 568px) {
+  html {
+    font-size: 16px; } }
+
+.reveal .slides {
+    text-align: left;
+}
+
+
+h1 {
+  font-weight: normal;
+  color: #562457;
+}
+
+h2, h3 {
+  font-weight: bold;
+  color: #88398a;
+}
+
+a, a > code {
+  color: #40E0D0;
+}
+.remark-code-line-highlighted { background-color: rgba(136, 57, 138, 0.3); }
+
+.inverse {
+  background-color: #562457;
+}
+.inverse, .inverse h1, .inverse h2, .inverse h3, .inverse a, inverse a > code {
+  color: #fff; background-image: "";
+}
+
