@@ -1,0 +1,3 @@
+fileName,name,contentUrl,fileFormat
+vst_mappingandtagging.csv,vst_mappingandtagging,https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv,csv
+vst_perplotperyear.csv,vst_perplotperyear,https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv,csv
