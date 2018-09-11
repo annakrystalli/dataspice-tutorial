@@ -1,5 +1,5 @@
 ---
-title: "Tutorial"
+title: "dataspice tutorial"
 output:
   html_document:
     df_print: paged
@@ -8,9 +8,25 @@ editor_options:
   chunk_output_type: inline
 ---
 
+<br>
+
+The goal of dataspice-tutorial is a **practical exercise in creating metadata** for an **example field collected data product** using package `dataspice`. 
+
+- Understand basic metadata and why it is important
+
+- Understand where and how to store them
+
+- Understand how they can feed into more complex metadata objects.
+
+
+## `dataspice` workflow
+
+<img src="https://github.com/ropenscilabs/dataspice/raw/master/man/figures/dataspice_workflow.png" width="100%">
+
+
+<br>
+
 ***
-
-
 
 ## workshop project
 
@@ -76,6 +92,8 @@ vst_perplotperyear <- read_csv("https://raw.githubusercontent.com/annakrystalli/
 
 You can inspect any object in your environment in Rstudio using function `View()`
 
+##### `vst_mappingandtagging`
+
 ```{r, eval = F}
 vst_mappingandtagging %>% View()
 ```
@@ -85,6 +103,7 @@ vst_mappingandtagging %>% View()
 DT::datatable(vst_mappingandtagging)
 ```
 
+##### `vst_perplotperyear`
 
 ```{r, eval=FALSE}
 vst_perplotperyear %>% View()
@@ -125,7 +144,7 @@ This creates a `metadata` folder in your project's `data` folder (although you c
 
 
 - **access.csv**: record details about where your data can be accessed.
-- **attributes.csv**: record details about the columns in your data.
+- **attributes.csv**: record details about the variables in your data.
 - **biblio.csv**: record dataset level metadata like title, description, licence and spatial and temoral coverage.
 - **creators.csv**: record creator details.
 
@@ -135,7 +154,11 @@ This creates a `metadata` folder in your project's `data` folder (although you c
 
 ## Record metadata
 
+<br>
+
 ### creators
+
+#### The `creators.csv` contains details of the **dataset creators**.
 
 Let's start with a quick and easy one, the creators. We can open and edit the file using in an interactive shiny app using `dataspice::edit_creators()`. Although we did not collect this data, just complete with your own details for the purposes of this tutorial.
 
@@ -152,6 +175,8 @@ Remember to click on **Save** when you're done editing.
 <br>
 
 ### access
+
+#### The `access.csv` contains details about **where the data can be accessed**.
 
 Before manually completing any details we can use `dataspice`'s  dedicated function `prep_access()` to extract information required for the `access.csv`
 
@@ -176,7 +201,7 @@ Remember to click on **Save** when you're done editing.
 
 ### biblio
 
-http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001
+#### The `biblio.csv` contains dataset level metadata like **title**, **description**, **licence** and **spatial** and **temoral coverage**.
 
 Before we start filling this table in, we can use some base R to extract some of the information we require. In particular we can **use function `range()` to extract the temporal and spatial extents of our data.**
 
@@ -217,7 +242,11 @@ Remember to click on **Save** when you're done editing.
 
 ### attributes
 
-#### The `attributes.csv` contains
+#### The `attributes.csv` contains details about the **variables** in your data.
+
+Again, `dataspice` provides functionality to populate the `attributes.csv` by extracting the variable names from individual data files using function `dataspice::prep_attributes()`.
+
+We can map the function over each `.csv` file in our `data/` folder by using function `purrr::map()`.
 
 ```{r}
 data_files <- list.files(here::here("data"),

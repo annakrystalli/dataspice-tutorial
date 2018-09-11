@@ -180,6 +180,14 @@ The goal of dataspice-tutorial is a **practical exercise in creating metadata** 
 
 ---
 
+
+## `dataspice` workflow
+
+<img src="https://github.com/ropenscilabs/dataspice/raw/master/man/figures/dataspice_workflow.png" width="100%">
+
+---
+
+
 # Example dataset
 
 ### Data source : 
