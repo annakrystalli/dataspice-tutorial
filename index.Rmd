@@ -3,9 +3,10 @@ title: "dataspice tutorial"
 output:
   html_document:
     df_print: paged
+    toc: true
+    toc_float: true
     theme: cerulean
-editor_options:
-  chunk_output_type: inline
+    highlight: tango
 ---
 
 <br>
@@ -28,7 +29,9 @@ The goal of dataspice-tutorial is a **practical exercise in creating metadata** 
 
 ***
 
-## workshop project
+# Setup
+
+## create workshop project
 
 Let's create a new Rstudio project in which to work with:
 
@@ -70,11 +73,11 @@ library(dataspice)
 
 ***
 
-## Data
+# Data
 
 For more information on the data source check the tutorial [README](https://github.com/annakrystalli/dataspice-tutorial)
 
-### Get data
+## Get data
 
 The `readr::read_csv()` allows use to download **raw csv data** from a URL.
 
@@ -113,7 +116,7 @@ vst_perplotperyear %>% View()
 DT::datatable(vst_perplotperyear)
 ```
 
-### Save data
+## Save data
 
 ```{r, eval=FALSE}
 write_csv(vst_mappingandtagging, here::here("data", "vst_mappingandtagging.csv"))
@@ -127,7 +130,7 @@ Once we've saved our data files in the data folder, we can use functions in the 
 
 ***
 
-## Create metadata files
+# Create metadata files
 
 We'll start by creating the basic metadata `.csv` files in which to collect metadata related to our example dataset using function `dataspice::create_spice()`
 
@@ -152,11 +155,11 @@ This creates a `metadata` folder in your project's `data` folder (although you c
 
 ---
 
-## Record metadata
+# Record metadata
 
 <br>
 
-### creators
+## `creators.csv`
 
 #### The `creators.csv` contains details of the **dataset creators**.
 
@@ -174,7 +177,7 @@ Remember to click on **Save** when you're done editing.
 
 <br>
 
-### access
+## `access.csv`
 
 #### The `access.csv` contains details about **where the data can be accessed**.
 
@@ -199,7 +202,7 @@ Remember to click on **Save** when you're done editing.
 
 <br>
 
-### biblio
+## `biblio.csv`
 
 #### The `biblio.csv` contains dataset level metadata like **title**, **description**, **licence** and **spatial** and **temoral coverage**.
 
@@ -240,7 +243,7 @@ Remember to click on **Save** when you're done editing.
 
 <br>
 
-### attributes
+## `attributes.csv`
 
 #### The `attributes.csv` contains details about the **variables** in your data.
 
@@ -269,12 +272,12 @@ edit_attributes()
 
 ![](assets/prepped_attr.png)
 
-We can now use `dataspice::edit_attributes()` to fill in the final details, namely the description and units the
+We can now use `dataspice::edit_attributes()` to fill in the final details, namely the **description** and **units** associated with the variables.
 
 
 For dataspice, we have opted to use **unit specification which can be parsed by R pkg [`units`](https://r-quantities.github.io/units/index.html)**, a package which provides a class for maintaining unit metadata and functionality for checking compatibility and conversion. `units` is **itself based on the [**`UDUNITS-2`**](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Introduction) C library**, a library for **units of physical quantities** and **unit-definition** and **value-conversion** utility. 
 
-You can install and search for units using `units` pkg, but for a quicker browsing and searching of units, you can use the handy ["Units and Symbols Found in the UDUNITS2 Database" web app](https://ncics.org/portfolio/other-resources/udunits2/?) to identify prefixes and base unit definitions. For now, use the **name** rather than the **symbol** definition. More complex units can be definied arithmetically and by combining base units. (eg meter cubed could be specificied  as `m3` or `m^3`. See `units` [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html#handling-data-with-units-in-r-the-units-package) for more details).
+You can install and search for units using `units` pkg (have a look at the package [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html)), but for a quicker browsing and searching of units, you can use the handy ["Units and Symbols Found in the UDUNITS2 Database" web app](https://ncics.org/portfolio/other-resources/udunits2/?) by the **North Carolina Institute for Climate Studies** to identify **prefixes** and **base unit** definitions. For now, use the **name** rather than the **symbol** UDUNITS definition. More **complex units can be definied arithmetically and by combining base units**. (eg meter cubed could be specificied  as `m3` or `m^3`. See `units` [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html#handling-data-with-units-in-r-the-units-package) for more details).
 
 
 Again, additional information required to complete these fields can be found on the [NEON data portal page for this dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial).
@@ -283,7 +286,7 @@ Again, additional information required to complete these fields can be found on 
 
 ***
 
-# create metadata json file
+# Create metadata json-ld file
 
 Now that all our metadata files are complete, we can compile it all into a structured `dataspice.json` file in our `data/metadata/` folder. 
 
@@ -303,7 +306,7 @@ Publishing this file on the web means it will be indexed by Google Datasets sear
 
 ***
 
-# build README site
+# Build README site
 
 Finally, we can use the `dataspice.json` file we just created to produce an informative README web page to include with our dataset for humans to enjoy! 
 
@@ -314,5 +317,12 @@ We use function `dataspice::build_site()` which creates file `index.html` in the
 build_site()
 ```
 
+<br> 
 
+#### View the resulting file [here](http://annakrystalli.me/dataspice-tutorial/docs/index.html)
 
+<br>
+
+Here's a screen shot!
+
+<img src="assets/index_webshot.png" width="100%">
