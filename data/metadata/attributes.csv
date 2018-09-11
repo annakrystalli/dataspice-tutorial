@@ -11,12 +11,12 @@ vst_perplotperyear.csv,siteID,NEON site code,NA
 vst_perplotperyear.csv,plotID,Plot identifier (NEON site code_XXX),NA
 vst_perplotperyear.csv,plotType,"NEON plot type in which sampling occurred: tower, distributed or gradient",NA
 vst_perplotperyear.csv,nlcdClass,National Land Cover Database Vegetation Type Name,NA
-vst_perplotperyear.csv,decimalLatitude,"The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area",decimalDegree
-vst_perplotperyear.csv,decimalLongitude,"The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area",decimalDegree
+vst_perplotperyear.csv,decimalLatitude,"The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area",degree
+vst_perplotperyear.csv,decimalLongitude,"The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area",degree
 vst_perplotperyear.csv,treesPresent,Indicator of whether the plot contains trees of any size,NA
 vst_perplotperyear.csv,shrubsPresent,"Indicator of whether the plot contains shrubs, saplings, or small trees",NA
 vst_perplotperyear.csv,lianasPresent,Indicator of whether the plot contains lianas,NA
-vst_perplotperyear.csv,totalSampledAreaTrees,Total plot area sampled for single and multi-bole trees,squareMeter
-vst_perplotperyear.csv,totalSampledAreaShrubSapling,"Total plot area sampled for saplings, shrubs, and small trees",squareMeter
-vst_perplotperyear.csv,totalSampledAreaLiana,Total plot area sampled for liana,squareMeter
+vst_perplotperyear.csv,totalSampledAreaTrees,Total plot area sampled for single and multi-bole trees,m2
+vst_perplotperyear.csv,totalSampledAreaShrubSapling,"Total plot area sampled for saplings, shrubs, and small trees",m2
+vst_perplotperyear.csv,totalSampledAreaLiana,Total plot area sampled for liana,m2
 vst_perplotperyear.csv,recordedBy,An identifier for the technician who recorded the data,NA

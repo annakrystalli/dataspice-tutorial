@@ -83,13 +83,13 @@
     },
     {
       "type": "PropertyValue",
-      "unitText": "decimalDegree",
+      "unitText": "degree",
       "name": "decimalLatitude",
       "description": "The geographic latitude (in decimal degrees, WGS84) of the geographic center of the reference area"
     },
     {
       "type": "PropertyValue",
-      "unitText": "decimalDegree",
+      "unitText": "degree",
       "name": "decimalLongitude",
       "description": "The geographic longitude (in decimal degrees, WGS84) of the geographic center of the reference area"
     },
@@ -113,19 +113,19 @@
     },
     {
       "type": "PropertyValue",
-      "unitText": "squareMeter",
+      "unitText": "m2",
       "name": "totalSampledAreaTrees",
       "description": "Total plot area sampled for single and multi-bole trees"
     },
     {
       "type": "PropertyValue",
-      "unitText": "squareMeter",
+      "unitText": "m2",
       "name": "totalSampledAreaShrubSapling",
       "description": "Total plot area sampled for saplings, shrubs, and small trees"
     },
     {
       "type": "PropertyValue",
-      "unitText": "squareMeter",
+      "unitText": "m2",
       "name": "totalSampledAreaLiana",
       "description": "Total plot area sampled for liana"
     }
