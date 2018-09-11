@@ -53,14 +53,7 @@ Includes a **section on Metadata** `r emo::ji("sparkles")`
 
 - Advising on domain specific **Controlled Vocabularies** & **structure** `r emo::ji("x")`
 
-<br>
-<br>
 
---
-
-***
-
-_course materials can be found [here](http://annakrystalli.me/ACCE/)_
 
 ---
 
@@ -163,8 +156,11 @@ class: inverse, middle, center
 
 <br>
 
-#### tutorial repo: <https://github.com/annakrystalli/dataspice-tutorial>
-#### useful links: <http://annakrystalli.me/dataspice-tutorial/useful_links.html>
+#### tutorial repo: 
+### <https://github.com/annakrystalli/dataspice-tutorial>
+
+#### useful links: 
+### <http://annakrystalli.me/dataspice-tutorial/useful_links.html>
 
 ---
 
@@ -288,17 +284,21 @@ class: inverse, middle, center
 
 - #### You can **make your datasets more discoverable** by developing **richer/more domain specific metadata** files. 
 --
-    + eg. create [Ecological Metadata Language (EML)](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html) metadata using r pkg [`eml2`](https://github.com/cboettig/eml2)
 
---    
-    + reposit your data at [KNB](https://knb.ecoinformatics.org/#data)
+- eg. create [Ecological Metadata Language (EML)](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html) metadata using r pkg [`eml2`](https://github.com/cboettig/eml2). 
+
+--  
+
+- reposit your data at [KNB](https://knb.ecoinformatics.org/#data)
+
 --
-    + allows richer [search and presentation of metadata](https://knb.ecoinformatics.org/#view/IC.13.1)
+
+- allows richer [search and presentation of metadata](https://knb.ecoinformatics.org/#view/IC.13.1)
     
 ---
 # KNB data portal
 
-## Powerfull search
+## Powerful search
 
 ![](assets/knb.png)
 
