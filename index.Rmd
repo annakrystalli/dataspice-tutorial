@@ -98,17 +98,21 @@ DT::datatable(vst_perplotperyear)
 
 ```{r, eval=FALSE}
 write_csv(vst_mappingandtagging, here::here("data", "vst_mappingandtagging.csv"))
+
 write_csv(vst_perplotperyear, here::here("data", "vst_perplotperyear.csv"))
 ```
 
+Once we've saved our data files in the data folder, we can use functions in the `dataspice` package to **create metadata files and complete them**.
 
 ## Create metadata files
+
+We'll start by creating the basic metadata `.csv` files in which to collect metadata related to our example dataset using function `dataspice::create_spice()`
 
 ```{r, eval=FALSE}
 create_spice()
 ```
 
-This creates by default a `metadata` folder in your project's `data` folder (although you can specify a different directory) containing 4 files in which to record your metadata.
+This creates a `metadata` folder in your project's `data` folder (although you can specify a different directory if required) containing 4 files in which to record your metadata.
 
 
 ![](assets/dataspice_files.png)
@@ -116,16 +120,21 @@ This creates by default a `metadata` folder in your project's `data` folder (alt
 <br>
 
 
-- **access.csv**: record details about where your data can be accessed
-- **attributes.csv**: record details about the columns in your data
+- **access.csv**: record details about where your data can be accessed.
+- **attributes.csv**: record details about the columns in your data.
 - **biblio.csv**: record dataset level metadata like title, description, licence and spatial and temoral coverage.
-- **creators.csv**: record creator details
+- **creators.csv**: record creator details.
+
+<br>
+
+---
 
 ## Record metadata
 
 ### creators
 
-Let's start with a quick and easy one, the creators. We can open and edit the file using in an interactive shiny app using `edit_creators`
+Let's start with a quick and easy one, the creators. We can open and edit the file using in an interactive shiny app using `dataspice::edit_creators()`. Although we did not collect this data, just complete with your own details for the purposes of this tutorial.
+
 
 ```{r, eval=FALSE}
 edit_creators()
@@ -159,17 +168,18 @@ edit_access()
 
 ### biblio
 
+http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001
 
 Before we start filling this table in, we can use some base R to extract some of the information we require. In particular we can **use function `range()` to extract the temporal and spatial extents of our data.**
 
 
-#### get date range
+#### get **temporal extent**
 
 ```{r}
 range(vst_perplotperyear$date, vst_mappingandtagging$date) 
 ```
 
-#### get geographical extent
+#### get **geographical extent**
 
 ##### South/North boundaries
 
@@ -183,11 +193,15 @@ range(vst_perplotperyear$decimalLatitude)
 range(vst_perplotperyear$decimalLongitude)
 ```
 
-
+Now that we've got the values for our temporal and spatial extents, we can complete the fields in the `biblio.csv` file. Additional information required to complete these fields can be found on the [NEON data portal page for this dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial).
 
 ```{r, eval=FALSE}
+
 edit_biblio()
 ```
+
+
+
 
 ### attributes
 
@@ -209,13 +223,46 @@ edit_attributes()
 
 ![](assets/prepped_attr.png)
 
+We can now use `dataspice::edit_attributes()` to fill in the final details, namely the description and units the
+
+
+For dataspice, we have opted to use **unit specification which can be parsed by R pkg [`units`](https://r-quantities.github.io/units/index.html)**, a package which provides a class for maintaining unit metadata and functionality for checking compatibility and conversion. `units` is **itself based on the [**`UDUNITS-2`**](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Introduction) C library**, a library for **units of physical quantities** and **unit-definition** and **value-conversion** utility. 
+
+You can install and search for units using `units` pkg, but for a quicker browsing and searching of units, you can use the handy ["Units and Symbols Found in the UDUNITS2 Database" web app](https://ncics.org/portfolio/other-resources/udunits2/?) to identify prefixes and base unit definitions. For now, use the **name** rather than the **symbol** definition. More complex units can be definied arithmetically and by combining base units. (eg meter cubed could be specificied  as `m3` or `m^3`. See `units` [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html#handling-data-with-units-in-r-the-units-package) for more details).
+
+
+Again, additional information required to complete these fields can be found on the [NEON data portal page for this dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial).
+
+<br>
+
+***
+
 # create metadata json file
+
+Now that all our metadata files are complete, we can compile it all into a structured `dataspice.json` file in our `data/metadata/` folder. 
 
 ```{r}
 write_spice()
 ```
 
+Here's an interactive view of the `dataspice.json` file we just created:
+
+```{r}
+jsonlite::read_json(here::here("data", "metadata", "dataspice.json")) %>% listviewer::jsonedit()
+```
+
+Publishing this file on the web means it will be indexed by Google Datasets search! `r emo::ji("smiley")` `r emo::ji("+1")` 
+
+<br>
+
+***
+
 # build README site
+
+Finally, we can use the `dataspice.json` file we just created to produce an informative README web page to include with our dataset for humans to enjoy! 
+
+We use function `dataspice::build_site()` which creates file `index.html` in the `docs/` folder of your project (which it creates if it doesn't already exist).
+
 
 ```{r}
 build_site()
