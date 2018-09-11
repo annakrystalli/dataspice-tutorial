@@ -88,21 +88,7 @@ _course materials can be found [here](http://annakrystalli.me/ACCE/)_
 ## issue [#72](https://github.com/ropensci/unconf18/issues/72) `r emo::ji("raising_hand_woman")`
 
 
-```{r echo= FALSE, message=FALSE}
-library(tidyverse)
-
-magick_webshot <- function(...){
-  webshot::webshot(...)
-  webshot <- magick::image_read("webshot.png")
-  file.remove("webshot.png")
-  webshot
-}
-
-magick_webshot(url = "https://github.com/ropensci/unconf18/issues/72",
-               cliprect = c(705, 5, 375, 200),
-               expand = c(92, 800, 500, 10)
-               )
-```
+<img src="assets/issue.png" width="100%">
 
 ---
 
@@ -155,13 +141,20 @@ Luckily, a **whole bunch of other awesome folks** already thinking about these t
 <br> 
 
 ---
-[![](assets/google_search_article.png)](https://www.theverge.com/2018/9/5/17822562/google-dataset-search-service-scholar-scientific-journal-open-data-access)
+
+### [Google unveils search engine for open data](https://www.nature.com/articles/d41586-018-06201-x)
+#### _The tool, called Google Dataset Search, should help researchers to find the data they need more easily._
+##### Nature NEWS - 05 SEPTEMBER 2018
+
+
+
+<img src="assets/google_search.png" width="100%">
 
 <br>
 
-#### <https://toolbox.google.com/datasetsearch>
+***
 
-![](assets/google_search.png)
+<https://toolbox.google.com/datasetsearch>
 
 ---
 class: inverse, middle, center
