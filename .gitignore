@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 raw-data/
-data/metadata/
 *.DS_Store
 metadata-*
 assets/metadata.png
