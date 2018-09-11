@@ -1,0 +1,29 @@
+---
+title: "useful links"
+output:
+  html_document:
+    df_print: paged
+    theme: cerulean
+---
+
+
+### data sources
+
+
+- URL for `vst_mappingandtagging.csv` at <https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv>
+
+- URL for `vst_perplotperyear.csv` at <https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv>
+
+
+### Additional info on the data
+
+- [NEON data portal page for the dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) 
+
+- `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)
+
+### Information on units
+
+- [**Units and Symbols Found in the UDUNITS2 Database** web app](https://ncics.org/portfolio/other-resources/udunits2/?) by the North Carolina Institute for Climate Studies 
+-  R pkg [`units`](https://r-quantities.github.io/units/index.html)
+- `units` pkg [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html)
+- [**`UDUNITS-2`**](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Introduction) library documentation

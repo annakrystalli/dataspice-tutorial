@@ -160,6 +160,12 @@ Luckily, a **whole bunch of other awesome folks** already thinking about these t
 class: inverse, middle, center
 
 # `dataspice` tutorial
+
+<br>
+
+#### tutorial repo: <https://github.com/annakrystalli/dataspice-tutorial>
+#### useful links: <http://annakrystalli.me/dataspice-tutorial/useful_links.html>
+
 ---
 
 # `dataspice` tutorial
