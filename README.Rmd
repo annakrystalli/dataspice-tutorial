@@ -54,7 +54,7 @@ Package [`dataspice`](https://github.com/ropenscilabs/dataspice) makes it easier
 
   In general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.
 
-Structure and mapping data are reported **per individual per plot**; sampling metadata, such as per growth form sampling area, are reported per plot. 
+Structure and mapping data are reported **per individual per plot**; sampling metadata, such as _per growth form sampling area (km<sup>2</sup>)_, are reported **per plot**. 
 
 For additional details, see protocol:
 
