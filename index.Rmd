@@ -25,6 +25,8 @@ The goal of dataspice-tutorial is a **practical exercise in creating metadata** 
 <img src="https://github.com/ropenscilabs/dataspice/raw/master/man/figures/dataspice_workflow.png" width="100%">
 
 
+_see [introductory slides](http://annakrystalli.me/dataspice-tutorial/slides.html) for further background_
+
 <br>
 
 ***
@@ -326,3 +328,7 @@ build_site()
 Here's a screen shot!
 
 <img src="assets/index_webshot.png" width="100%">
+
+***
+
+#### _back to the [outro slides](http://annakrystalli.me/dataspice-tutorial/slides.html#32)_

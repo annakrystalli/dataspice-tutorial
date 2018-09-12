@@ -267,6 +267,12 @@ class: inverse, middle, center
 
 ### time for some live coding `r emo::ji("scream")`
 
+<br>
+<br>
+
+***
+
+_or head to the [tutorial](http://annakrystalli.me/dataspice-tutorial/) if working through this on your own_
 
 ---
 class: inverse, middle, center
@@ -321,7 +327,7 @@ class: inverse, middle, center
 
 --
 
-- Got ideas for features / found any bugs? Open an [issue](https://github.com/ropenscilabs/dataspice/issues)!
+- Got ideas for features / found any bugs? Open an [issue](https://github.com/ropenscilabs/dataspice/issues)! 
 
 --
 
