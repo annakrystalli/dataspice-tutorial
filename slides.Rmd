@@ -306,7 +306,8 @@ class: inverse, middle, center
 
 ## Powerful search
 
-![](assets/knb.png)
+<img src="assets/knb.png" width="100%">
+
 
 ---
 
@@ -314,7 +315,8 @@ class: inverse, middle, center
 
 ## Rich interactive metadata
 
-![](assets/knb_attributes.png)
+<img src="assets/knb_attributes.png" width="100%">
+
 
 
 ---
