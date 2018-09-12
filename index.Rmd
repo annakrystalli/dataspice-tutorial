@@ -236,7 +236,7 @@ range(vst_perplotperyear$decimalLatitude)
 range(vst_perplotperyear$decimalLongitude)
 ```
 
-_nb: you can also supply the geographic boundaries of your data as a single [well-known text string](https://en.wikipedia.org/wiki/Well-known_text) instead of the four boundary coordinates._
+_NB: you can also supply the geographic boundaries of your data as a single [well-known text string](https://en.wikipedia.org/wiki/Well-known_text) in field `wktString` instead of supplying the four boundary coordinates._
 
 <br>
 
@@ -246,6 +246,8 @@ Now that we've got the values for our temporal and spatial extents, we can **com
 
 edit_biblio()
 ```
+
+![](assets/edit_biblio.png)
 
 Remember to click on **Save** when you're done editing.
 
