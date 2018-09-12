@@ -89,19 +89,19 @@ Includes a **section on Metadata** `r emo::ji("sparkles")`
 # Metadata team!
 ------------
 
-Luckily, a **whole bunch of other awesome folks** already thinking about these topics and interested in working on them! `r emo::ji("star_struck")`
+Luckily, a **whole bunch of other awesome folks** were also thinking about these topics and interested in working on them! `r emo::ji("star_struck")`
 
 (in alphabetical order):
 
 -   [Carl Boettiger](https://github.com/cboettig)
 -   [Scott Chamberlain](https://github.com/sckott)
--   [Auriel Fournier](https://github.com/aurielfournier)
+-   [Auriel Fournier](https://github.com/aurielfournier): #[41](https://github.com/ropensci/unconf18/issues/41)
 -   [Kelly Hondula](https://github.com/khondula)
 -   [Anna Krystalli](https://github.com/annakrystalli)
 -   [Bryce Mecum](https://github.com/amoeba)
 -   [Maëlle Salmon](https://github.com/maelle)
--   [Kate Webbink](https://github.com/magpiedin)
--   [Kara Woo](https://github.com/karawoo)
+-   [Kate Webbink](https://github.com/magpiedin): #[52](https://github.com/ropensci/unconf18/issues/52)
+-   [Kara Woo](https://github.com/karawoo): #[68](https://github.com/ropensci/unconf18/issues/68)
 
 
 ---
@@ -127,7 +127,7 @@ Luckily, a **whole bunch of other awesome folks** already thinking about these t
 --
 
 - Ability to produce:
-    + **structured (.json) metadata file**.
+    + **structured json-ld metadata file**.
     + a helpful dataset **README webpage**.
  
     
@@ -242,7 +242,10 @@ library(dplyr)
 Plot level data
 
 ```{r, echo=FALSE, message=FALSE}
-readr::read_csv(here::here("data", "vst_perplotperyear.csv")) %>% head(6) %>% knitr::kable(format = 'html')
+library(kableExtra)
+readr::read_csv(here::here("data", "vst_perplotperyear.csv")) %>% head(20) %>% knitr::kable(format = 'html') %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", height = "300px")
 ```
 
 ---
@@ -252,7 +255,9 @@ readr::read_csv(here::here("data", "vst_perplotperyear.csv")) %>% head(6) %>% kn
 Individual level data
 
 ```{r, echo=FALSE, message=FALSE}
-readr::read_csv(here::here("data", "vst_mappingandtagging.csv")) %>% head(6) %>% knitr::kable(format = 'html')
+readr::read_csv(here::here("data", "vst_mappingandtagging.csv")) %>% head(20) %>% knitr::kable(format = 'html') %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", height = "300px")
 ```
 
 
