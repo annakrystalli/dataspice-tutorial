@@ -255,7 +255,7 @@ Remember to click on **Save** when you're done editing.
 <div class="alert alert-success">
 #### `r emo::ji("mag")` metadata hunt
 
-Additional information required to complete these fields can be found on the [NEON data portal page for this dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial).
+Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**.
 </div>
 
 <br>
@@ -264,7 +264,7 @@ Additional information required to complete these fields can be found on the [NE
 
 #### The `attributes.csv` contains details about the **variables** in your data.
 
-Again, `dataspice` provides functionality to populate the `attributes.csv` by extracting the variable names from individual data files using function `dataspice::prep_attributes()`.
+Again, `dataspice` provides functionality to **populate the `attributes.csv` by extracting the variable names from individual data files** using function **`dataspice::prep_attributes()`**.
 
 We can map the function over each `.csv` file in our `data/` folder by using function `purrr::map()`.
 
@@ -298,10 +298,13 @@ Remember to click on **Save** when you're done editing.
 
 For dataspice, we have opted to use **unit specification which can be parsed by R pkg [`units`](https://r-quantities.github.io/units/index.html)**, a package which provides a class for maintaining unit metadata and functionality for checking compatibility and conversion. `units` is **itself based on the [**`UDUNITS-2`**](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Introduction) C library**, a library for **units of physical quantities** and **unit-definition** and **value-conversion** utility. 
 
-You can install and search for units using `units` pkg (have a look at the package [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html)), but for a quicker browsing and searching of units, you can use the handy ["Units and Symbols Found in the UDUNITS2 Database" web app](https://ncics.org/portfolio/other-resources/udunits2/?) by the **North Carolina Institute for Climate Studies** to identify **prefixes** and **base unit** definitions. For now, use the **name** rather than the **symbol** UDUNITS definition. More **complex units can be definied arithmetically and by combining base units**. (eg meter cubed could be specificied  as `m3` or `m^3`. See `units` [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html#handling-data-with-units-in-r-the-units-package) for more details).
+You can install and search for units using `units` pkg (have a look at the package [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html)), but for a quicker browsing and searching of units, you can use the handy ["Units and Symbols Found in the UDUNITS2 Database" web app](https://ncics.org/portfolio/other-resources/udunits2/?) by the **North Carolina Institute for Climate Studies** to identify **prefixes** and **base unit** definitions. 
 
+For now, use the **name** rather than the **symbol** UDUNITS definition. More **complex units can be definied arithmetically and by combining base units**. (eg meter cubed could be specificied  as `m3` or `m^3`. See `units` [vignette](https://r-quantities.github.io/units/articles/measurement_units_in_R.html#handling-data-with-units-in-r-the-units-package) for more details).
 
-Additional information required to complete these fields can be found on the [NEON data portal page for this dataset](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the `dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial).
+<br>
+
+Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**.
 
 </div>
 
