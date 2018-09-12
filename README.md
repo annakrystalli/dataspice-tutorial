@@ -3,6 +3,8 @@
 dataspice-tutorial
 ==================
 
+[![DOI](https://zenodo.org/badge/136082880.svg)](https://zenodo.org/badge/latestdoi/136082880)
+
 The goal of dataspice-tutorial is a practical exercise in creating metadata for an example field collected data product using package `dataspice`.
 
 -   Understand basic metadata and why it is important
