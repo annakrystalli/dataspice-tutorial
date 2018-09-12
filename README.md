@@ -43,11 +43,13 @@ In general, comparatively large individuals that are visible to remote-sensing i
 
 Structure and mapping data are reported **per individual per plot**; sampling metadata, such as *per growth form sampling area (m<sup>2</sup>)* or National Land Cover Database Vegetation Type Name (NLCD class) are reported **per plot**.
 
-For additional details, see protocol:
+For additional details, see protocols:
 
--   **[NEON.DOC.000987vG](dataspice-tutorial/data/methods/NEON.DOC.000987vF.pdf): TOS Protocol and Procedure: Measurement of Vegetation Structure, and Science Design**
+-   **[NEON.DP1.10098/NEON.DP1.10045](dataspice-tutorial/assets/methods/NEON_vegStructure_userGuide_vA.pdf): NEON User Guide to Woody Plant Vegetation Structure (NEON.DP1.10098) and Non- herbaceous Perennial Vegetation Structure (NEON.DP1.10045)**
 
--   **[NEON.DOC.000914](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/methods/NEON.DOC.000914vA.pdf): TOS Science Design for Plant Biomass, Productivity and Leaf Area Index.**
+-   **[NEON.DOC.000987vG](dataspice-tutorial/assets/methods/NEON.DOC.000987vF.pdf): TOS Protocol and Procedure: Measurement of Vegetation Structure, and Science Design**
+
+-   **[NEON.DOC.000914](https://github.com/annakrystalli/dataspice-tutorial/blob/master/assets/methods/NEON.DOC.000914vA.pdf): TOS Science Design for Plant Biomass, Productivity and Leaf Area Index.**
 
 ------------------------------------------------------------------------
 
