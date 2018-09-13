@@ -71,14 +71,14 @@ Filter returned data from **2 sites** from **`2015-6`** to **`2015-11`**.
 
 Plot level data
 
-| date     | siteID | plotID    | plotType | nlcdClass       |  decimalLatitude|  decimalLongitude| treesPresent | shrubsPresent | lianasPresent |  totalSampledAreaTrees|  totalSampledAreaShrubSapling|  totalSampledAreaLiana| recordedBy                       |
-|:---------|:-------|:----------|:---------|:----------------|----------------:|-----------------:|:-------------|:--------------|:--------------|----------------------:|-----------------------------:|----------------------:|:---------------------------------|
-| 06/06/15 | BART   | BART\_042 | tower    | deciduousForest |         44.06019|         -71.28805| NA           | NA            | NA            |                    800|                           400|                    800| wmtulGhdefWiPr5g1VRF0YnRBawgSBx1 |
-| 07/16/15 | BART   | BART\_047 | tower    | deciduousForest |         44.06496|         -71.29087| NA           | NA            | NA            |                    800|                           400|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
-| 07/21/15 | BART   | BART\_047 | tower    | deciduousForest |         44.06496|         -71.29087| NA           | NA            | NA            |                    800|                           400|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
-| 07/22/15 | BART   | BART\_034 | tower    | mixedForest     |         44.06428|         -71.28561| NA           | NA            | NA            |                    800|                           400|                    800| bWvVSKjgptV89BwHA3h10JNaeV+PHmDU |
-| 07/22/15 | BART   | BART\_041 | tower    | deciduousForest |         44.06534|         -71.28561| NA           | NA            | NA            |                    800|                           400|                    800| MRgCvwP2WueoGZahvpQXNZ+be1CYdCGm |
-| 07/22/15 | BART   | BART\_033 | tower    | deciduousForest |         44.06320|         -71.28367| NA           | NA            | NA            |                    800|                           100|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
+| date       | siteID | plotID    | plotType | nlcdClass       |  decimalLatitude|  decimalLongitude| treesPresent | shrubsPresent | lianasPresent |  totalSampledAreaTrees|  totalSampledAreaShrubSapling|  totalSampledAreaLiana| recordedBy                       |
+|:-----------|:-------|:----------|:---------|:----------------|----------------:|-----------------:|:-------------|:--------------|:--------------|----------------------:|-----------------------------:|----------------------:|:---------------------------------|
+| 2015-06-06 | BART   | BART\_042 | tower    | deciduousForest |         44.06019|         -71.28805| NA           | NA            | NA            |                    800|                           400|                    800| wmtulGhdefWiPr5g1VRF0YnRBawgSBx1 |
+| 2015-07-16 | BART   | BART\_047 | tower    | deciduousForest |         44.06496|         -71.29087| NA           | NA            | NA            |                    800|                           400|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
+| 2015-07-21 | BART   | BART\_047 | tower    | deciduousForest |         44.06496|         -71.29087| NA           | NA            | NA            |                    800|                           400|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
+| 2015-07-22 | BART   | BART\_034 | tower    | mixedForest     |         44.06428|         -71.28561| NA           | NA            | NA            |                    800|                           400|                    800| bWvVSKjgptV89BwHA3h10JNaeV+PHmDU |
+| 2015-07-22 | BART   | BART\_041 | tower    | deciduousForest |         44.06534|         -71.28561| NA           | NA            | NA            |                    800|                           400|                    800| MRgCvwP2WueoGZahvpQXNZ+be1CYdCGm |
+| 2015-07-22 | BART   | BART\_033 | tower    | deciduousForest |         44.06320|         -71.28367| NA           | NA            | NA            |                    800|                           100|                    800| XdV86USKkiYZfb6rmwpnK/f2Yah5qnQO |
 
 <br>
 
@@ -86,14 +86,14 @@ Plot level data
 
 Individual level data
 
-| date     | siteID | plotID    | individualID             | taxonID | scientificName                 | recordedBy                       |
-|:---------|:-------|:----------|:-------------------------|:--------|:-------------------------------|:---------------------------------|
-| 08/04/15 | BART   | BART\_051 | NEON.PLA.D01.BART.04140  | TSCA    | Tsuga canadensis (L.) Carrière | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
-| 08/04/15 | BART   | BART\_051 | NEON.PLA.D01.BART.03804  | TSCA    | Tsuga canadensis (L.) Carrière | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
-| 07/22/15 | BART   | BART\_034 | NEON.PLA.D01.BART.02967  | FAGR    | Fagus grandifolia Ehrh.        | zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I |
-| 08/26/15 | BART   | BART\_036 | NEON.PLA.D01.BART.05106  | FAGR    | Fagus grandifolia Ehrh.        | zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I |
-| 08/04/15 | BART   | BART\_051 | NEON.PLA.D01.BART.04080  | PICEA   | Picea sp.                      | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
-| 08/04/15 | BART   | BART\_039 | NEON.PLA.D01.BART.02904A | TSCA    | Tsuga canadensis (L.) Carrière | 0uwWHUCkGoRVT9RpJxngFjI8cZrsFWgn |
+| date       | siteID | plotID    | individualID             | taxonID | scientificName                 | recordedBy                       |
+|:-----------|:-------|:----------|:-------------------------|:--------|:-------------------------------|:---------------------------------|
+| 2015-08-04 | BART   | BART\_051 | NEON.PLA.D01.BART.04140  | TSCA    | Tsuga canadensis (L.) Carrière | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
+| 2015-08-04 | BART   | BART\_051 | NEON.PLA.D01.BART.03804  | TSCA    | Tsuga canadensis (L.) Carrière | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
+| 2015-07-22 | BART   | BART\_034 | NEON.PLA.D01.BART.02967  | FAGR    | Fagus grandifolia Ehrh.        | zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I |
+| 2015-08-26 | BART   | BART\_036 | NEON.PLA.D01.BART.05106  | FAGR    | Fagus grandifolia Ehrh.        | zODC+zTh3jdHKFo7lDoQcuNYRkWsGu3I |
+| 2015-08-04 | BART   | BART\_051 | NEON.PLA.D01.BART.04080  | PICEA   | Picea sp.                      | 6HzkzFDdLaNgPi31AaqxNPsuI5nRHqWu |
+| 2015-08-04 | BART   | BART\_039 | NEON.PLA.D01.BART.02904A | TSCA    | Tsuga canadensis (L.) Carrière | 0uwWHUCkGoRVT9RpJxngFjI8cZrsFWgn |
 
 ------------------------------------------------------------------------
 
