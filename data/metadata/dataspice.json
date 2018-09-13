@@ -1,7 +1,7 @@
 {
   "@context": "http://schema.org",
   "type": "Dataset",
-  "name": "NEON Woody plant vegetation structure",
+  "name": "NEON Woody plant vegetation structure: dataspice tutorial subset",
   "creator": [
     {
       "type": "Person",
@@ -12,7 +12,7 @@
       "email": "a.krystalli@sheffield.ac.uk"
     }
   ],
-  "description": "This data product contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:\n\nenabling biomass and productivity estimation,\nestimation of shrub volume and biomass\ncalibration / validation of multiple NEON airborne remote-sensing data products.\nIn general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.\n\nStructure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.",
+  "description": "This data product, sourced from the NEON data portal for the purposes of the dataspice tutorial, contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:\n\nenabling biomass and productivity estimation,\nestimation of shrub volume and biomass\ncalibration / validation of multiple NEON airborne remote-sensing data products.\nIn general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.\n\nStructure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.",
   "datePublished": "2018-09-08",
   "keywords": ["annual net primary productivity (ANPP)", "biomass", "carbon cycle", "lianas", "net primary productivity (NPP)", "plant productivity", "plants", "production", "productivity", "saplings", "shrubs", "trees", "vegetation", "woody plants"],
   "funder": "National Science Foundation",

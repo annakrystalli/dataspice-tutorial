@@ -1,5 +1,5 @@
 title,description,datePublished,citation,keywords,license,funder,geographicDescription,northBoundCoord,eastBoundCoord,southBoundCoord,westBoundCoord,wktString,startDate,endDate
-NEON Woody plant vegetation structure,"This data product contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:
+NEON Woody plant vegetation structure: dataspice tutorial subset,"This data product, sourced from the NEON data portal for the purposes of the dataspice tutorial, contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:
 
 enabling biomass and productivity estimation,
 estimation of shrub volume and biomass
