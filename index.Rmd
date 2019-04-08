@@ -255,7 +255,7 @@ Remember to click on **Save** when you're done editing.
 
 Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**
 
-##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/biblio-half.csv)
+##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/biblio-half.csv)
 
 </div>
 
@@ -304,7 +304,7 @@ For now, use the **name** rather than the **symbol** UDUNITS definition. More **
 
 <br>
 
-##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/attributes-half.csv)
+##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/attributes-half.csv)
 
 </div>
 
@@ -361,8 +361,9 @@ Here's a screen shot!
 
 ### Example completed metadata files
 
-- [`access.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/access.csv)
-- [`attributes.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/attributes.csv)
-- [`biblio.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/biblio.csv)
-- [`creators.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/creators.csv)
+- [`access.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/blob/master/metadata/access.csv)
+- [`attributes.csv`](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/attributes.csv)
+- [`biblio.csv`](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/biblio.csv)
+- [`creators.csv`](https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/creators.csv)
 
+https://github.com/annakrystalli/dataspice-tutorial/blob/master/data/metadata/creators.csv
