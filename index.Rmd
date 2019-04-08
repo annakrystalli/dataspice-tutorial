@@ -5,8 +5,7 @@ output:
     df_print: paged
     toc: true
     toc_float: true
-    theme: cerulean
-    highlight: tango
+    theme: flatly
 ---
 
 <br>
@@ -37,7 +36,7 @@ _see [introductory slides](http://annakrystalli.me/dataspice-tutorial/slides.htm
 
 Let's [**create a new Rstudio project**](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) in which to work:
 
-### File > New Project > New Directory > New Project > "Practical Data Management"
+### **File > New Project > New Directory > New Project > `practical-data-management`**
 
 In our new project, let's **create a `data/` folder** in which to store the data.
 
@@ -59,15 +58,14 @@ Save it in the **project root**, eg as `metadata_dev.R`
 Let's **install and load all the packages** we'll need for the workshop:
 
 ```{r, eval=FALSE}
-install.packages("tidyverse")
-install.packages("here")
+install.packages("readr")
 install.packages("devtools")
 devtools::install_github("ropenscilabs/dataspice")
 ```
 
 
 ```{r, message=FALSE}
-library(tidyverse)
+library(readr)
 library(dataspice)
 ```
 
@@ -75,7 +73,7 @@ library(dataspice)
 
 ***
 
-# Data
+# `r emo::ji("vertical_traffic_light")` Data
 
 **For more information on the data source check the tutorial [README](https://github.com/annakrystalli/dataspice-tutorial)**
 
@@ -85,12 +83,12 @@ The `readr::read_csv()` function allows us to **download and read in raw csv dat
 
 - URL for `vst_mappingandtagging.csv` at <https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv>
 
-- URL for `vst_perplotperyear.csv` at <https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv>
+- URL for `vst_perplotperyear.csv` at <https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv>
 
 ```{r, message=FALSE}
-vst_mappingandtagging <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv")
+mt <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_mappingandtagging.csv")
 
-vst_perplotperyear <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv")
+ppy <- read_csv("https://raw.githubusercontent.com/annakrystalli/dataspice-tutorial/master/data/vst_perplotperyear.csv")
 ```
 
 ### Inspect data
@@ -100,30 +98,30 @@ You can **inspect any object** in your environment in Rstudio using function `Vi
 ##### `vst_mappingandtagging`
 
 ```{r, eval = F}
-vst_mappingandtagging %>% View()
+mt %>% View()
 ```
 
 
 ```{r, echo=FALSE}
-DT::datatable(vst_mappingandtagging)
+DT::datatable(mt)
 ```
 
 ##### `vst_perplotperyear`
 
 ```{r, eval=FALSE}
-vst_perplotperyear %>% View()
+ppy %>% View()
 ```
 
 ```{r, echo=FALSE}
-DT::datatable(vst_perplotperyear)
+DT::datatable(ppy)
 ```
 
 ## Save data
 
 ```{r, eval=FALSE}
-write_csv(vst_mappingandtagging, here::here("data", "vst_mappingandtagging.csv"))
+write_csv(mt, here::here("data", "vst_mappingandtagging.csv"))
 
-write_csv(vst_perplotperyear, here::here("data", "vst_perplotperyear.csv"))
+write_csv(ppy, here::here("data", "vst_perplotperyear.csv"))
 ```
 
 Once we've saved our data files in the data folder, we can **use functions in the `dataspice` package to create metadata files and complete them**.
@@ -132,7 +130,7 @@ Once we've saved our data files in the data folder, we can **use functions in th
 
 ***
 
-# Create metadata files
+# `r emo::ji("vertical_traffic_light")` Create metadata files
 
 We'll **start by creating the basic metadata `.csv` files** in which to collect metadata related to our example dataset using function **`dataspice::create_spice()`**.
 
@@ -205,7 +203,7 @@ Remember to click on **Save** when you're done editing.
 
 <br>
 
-## `biblio.csv`
+## `r emo::ji("vertical_traffic_light")` `biblio.csv`
 
 #### The `biblio.csv` contains dataset level metadata like **title**, **description**, **licence** and **spatial** and **temoral coverage**.
 
@@ -217,7 +215,7 @@ Before we start filling this table in, we can use some base R functions to extra
 Although dates are stored as a text string, **because they are in ISO format (YYYY-MM-DD), sorting them results in correct chronological ordering**. If your temporal data is not in ISO format, consider converting them (see package `lubridate`)
 
 ```{r}
-range(vst_perplotperyear$date, vst_mappingandtagging$date) 
+range(ppy$date) 
 ```
 
 #### get **geographical extent**
@@ -227,13 +225,13 @@ The lat/lon coordinates are in decimal degrees which again are easy to sort or c
 ##### South/North boundaries
 
 ```{r}
-range(vst_perplotperyear$decimalLatitude)
+range(ppy$decimalLatitude)
 ```
 
 ##### West/East boundaries
 
 ```{r}
-range(vst_perplotperyear$decimalLongitude)
+range(ppy$decimalLongitude)
 ```
 
 _NB: you can also supply the geographic boundaries of your data as a single [well-known text string](https://en.wikipedia.org/wiki/Well-known_text) in field `wktString` instead of supplying the four boundary coordinates._
@@ -252,32 +250,28 @@ edit_biblio()
 Remember to click on **Save** when you're done editing.
 
 
-<div class="alert alert-success">
+<div class="alert alert-warning">
 #### `r emo::ji("mag")` metadata hunt
 
-Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**.
+Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**
+
+##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/biblio-half.csv)
+
 </div>
 
 <br>
 
-## `attributes.csv`
+## `r emo::ji("vertical_traffic_light")` `attributes.csv`
 
 #### The `attributes.csv` contains details about the **variables** in your data.
 
 Again, `dataspice` provides functionality to **populate the `attributes.csv` by extracting the variable names from individual data files** using function **`dataspice::prep_attributes()`**.
 
-We can map the function over each `.csv` file in our `data/` folder by using function `purrr::map()`.
+The functions is vectorised and maps over each `.csv` file in our `data/` folder.
 
-```{r}
-data_files <- list.files(here::here("data"),
-                         pattern = ".csv",
-                        full.names = TRUE)
-
-data_files
-```
 
 ```{r, eval=FALSE}
-data_files %>% purrr::map(~prep_attributes(.x))
+prep_attributes()
 ```
 
 
@@ -293,8 +287,14 @@ edit_attributes()
 
 Remember to click on **Save** when you're done editing.
 
-<div class="alert alert-success">
+<div class="alert alert-warning">
 #### `r emo::ji("mag")` metadata hunt
+
+##### Descriptions
+
+Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**. Useful naming convention that apply throughout NEON data products can be found [here](https://data.neonscience.org/file-naming-conventions) 
+
+##### Units
 
 For dataspice, we have opted to use **unit specification which can be parsed by R pkg [`units`](https://r-quantities.github.io/units/index.html)**, a package which provides a class for maintaining unit metadata and functionality for checking compatibility and conversion. `units` is **itself based on the [**`UDUNITS-2`**](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Introduction) C library**, a library for **units of physical quantities** and **unit-definition** and **value-conversion** utility. 
 
@@ -304,7 +304,7 @@ For now, use the **name** rather than the **symbol** UDUNITS definition. More **
 
 <br>
 
-Additional information required to complete these fields can be found on the [**NEON data portal page for this dataset**](http://data.neonscience.org/data-product-view?dpCode=DP1.10098.001) and the **`dataspice-tutorial` repository [README](https://github.com/annakrystalli/dataspice-tutorial)**.
+##### Here's [an example to get you started](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/attributes-half.csv)
 
 </div>
 
@@ -312,7 +312,7 @@ Additional information required to complete these fields can be found on the [**
 
 ***
 
-# Create metadata json-ld file
+# `r emo::ji("vertical_traffic_light")` Create metadata json-ld file
 
 Now that all our metadata files are complete, we can **compile it all into a structured `dataspice.json` file** in our `data/metadata/` folder. 
 
@@ -356,3 +356,13 @@ Here's a screen shot!
 ***
 
 #### _back to the [outro slides](http://annakrystalli.me/dataspice-tutorial/slides.html#32)_
+
+***
+
+### Example completed metadata files
+
+- [`access.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/access.csv)
+- [`attributes.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/attributes.csv)
+- [`biblio.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/biblio.csv)
+- [`creators.csv`](https://github.com/annakrystalli/dataspice-tutorial/data/metadata/creators.csv)
+

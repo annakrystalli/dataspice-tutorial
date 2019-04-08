@@ -6,10 +6,10 @@
     {
       "type": "Person",
       "id": "0000-0002-2378-4915",
-      "worksFor": "University of Sheffield",
       "givenName": "Anna",
       "familyName": "Krystalli",
-      "email": "a.krystalli@sheffield.ac.uk"
+      "email": "a.krystalli@sheffield.ac.uk",
+      "affiliation": "University of Sheffield"
     }
   ],
   "description": "This data product, sourced from the NEON data portal for the purposes of the dataspice tutorial, contains the quality-controlled, native sampling resolution data from in-situ measurements of live and standing dead woody individuals and shrub groups, from all terrestrial NEON sites with qualifying woody vegetation. The exact measurements collected per individual depend on growth form, and these measurements are focused on:\n\nenabling biomass and productivity estimation,\nestimation of shrub volume and biomass\ncalibration / validation of multiple NEON airborne remote-sensing data products.\nIn general, comparatively large individuals that are visible to remote-sensing instruments are mapped, tagged and measured, and other smaller individuals are tagged and measured but not mapped. Smaller individuals may be subsampled according to a nested subplot approach in order to standardize the per plot sampling effort.\n\nStructure and mapping data are reported per individual per plot; sampling metadata, such as per growth form sampling area, are reported per plot.",
